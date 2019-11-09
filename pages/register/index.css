@@ -1,0 +1,20 @@
+.check-box-div{
+    display: inline-block;
+    line-height: 40px;
+    margin: 5px;
+}
+.check-name{
+    font-size: 16px;
+    padding-left: 4px;
+}
+
+.input-box-2{
+    margin-bottom: 50px;
+}
+
+.title{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+

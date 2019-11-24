@@ -8,7 +8,7 @@ const basicAuthorization = isDevMode ? 'Y2xpZW50XzE6MTIzNDU2' : 'Y2xpZW50XzE6MTI
 
 
 module.exports = withCSS(withLess(withSass({
-    distDir: 'build',
+    distDir: 'dist',
     compress:true,
     cssModules: false,
     cssLoaderOptions: {

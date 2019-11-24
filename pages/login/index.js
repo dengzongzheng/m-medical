@@ -12,9 +12,10 @@ class Index extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            param:{
+            param: {
                 username: "",
                 password: "",
+                type: "m_user",
                 grant_type: "password"
             }
         }

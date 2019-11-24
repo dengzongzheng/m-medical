@@ -33,7 +33,9 @@ module.exports = withCSS(withLess(withSass({
     //这里的配置既可以服务端获取到，也可以在浏览器端获取到
     publicRuntimeConfig: {
         serverBaseUrl: serverBaseUrl,
-        basicAuthorization:basicAuthorization
+        basicAuthorization:basicAuthorization,
+        rootDir: path.join(__dirname, './'),
+        PORT: isDevMode ? 3006 : (process.env.PORT || 9081)
     }
 })));
 

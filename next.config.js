@@ -5,7 +5,17 @@ const path = require('path');
 const isDevMode = process.env.NODE_ENV === 'development';
 const serverBaseUrl = isDevMode ? 'http://127.0.0.1:9080' : 'http://api.sswjjd.cn';
 const basicAuthorization = isDevMode ? 'Y2xpZW50XzE6MTIzNDU2' : 'Y2xpZW50XzE6MTIzNDU2';
+const lessToJS = require('less-vars-to-js');
 
+
+const isDev = process.env.NODE_ENV !== 'production';
+
+// fix antd bug in dev development
+
+// fix: prevents error when .css files are required by node
+if (typeof require !== 'undefined') {
+    require.extensions['.less'] = () => {}
+}
 
 module.exports = withCSS(withLess(withSass({
     distDir: 'dist',
@@ -28,6 +38,12 @@ module.exports = withCSS(withLess(withSass({
         config.resolve.alias['request'] = path.join(__dirname, 'request');
         config.resolve.alias['store'] = path.join(__dirname, 'store');
         config.resolve.alias['util'] = path.join(__dirname, 'util');
+        return config;
+    },
+    webpackDevMiddleware: config => {
+        // Perform customizations to webpack dev middleware config
+        // console.log(config, '@@')
+        // Important: return the modified config
         return config;
     },
     //这里的配置既可以服务端获取到，也可以在浏览器端获取到

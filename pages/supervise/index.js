@@ -7,7 +7,8 @@ import Upload from 'components/Upload/Index';
 import { Toast } from 'antd-mobile';
 import "./index.scss";
 import Router from "next/router";
-import {questionAnswers1} from "./questiones";
+import {questionAnswers1} from "util/Questiones";
+
 
 export default class Supervise extends Component {
 

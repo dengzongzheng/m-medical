@@ -11,7 +11,7 @@ axios.defaults.baseURL = config.serviceRootPath;
 //根据 axios api，对请求返回做拦截处理
 axios.interceptors.response.use(function (response) {
     console.log(response);
-    if (response.status ===401) {
+    if (response && response.status && response.status ===401) {
         // 对返回状态码为 4xx 的请求统一处理
         // 此处统一跳转 404 页面
         window.location.href = decodeURI(`${window.location.protocol}//${window.location.host}/login`)

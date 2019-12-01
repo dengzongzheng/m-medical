@@ -7,7 +7,6 @@ import config from 'request/config';
 axios.defaults.timeout = 10000;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 axios.defaults.baseURL = config.serviceRootPath;
-axios.defaults.withCredentials=true
 
 //根据 axios api，对请求返回做拦截处理
 axios.interceptors.response.use(function (response) {

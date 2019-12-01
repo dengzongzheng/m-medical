@@ -3,7 +3,7 @@ const withLess = require('@zeit/next-less');
 const withSass = require('@zeit/next-sass')
 const path = require('path');
 const isDevMode = process.env.NODE_ENV === 'development';
-const serverBaseUrl = isDevMode ? 'http://127.0.0.1:9080' : 'http://api.sswjjd.cn';
+const serverBaseUrl = isDevMode ? 'http://127.0.0.1:9080' : 'http://m.sswjjd.cn';
 const basicAuthorization = isDevMode ? 'Y2xpZW50XzE6MTIzNDU2' : 'Y2xpZW50XzE6MTIzNDU2';
 const lessToJS = require('less-vars-to-js');
 

@@ -4,6 +4,8 @@ import App from 'next/app'
 import withRedux from 'next-redux-wrapper'
 import {initStore} from 'store/store';
 import 'antd-mobile/dist/antd-mobile.css';
+import dynamic from 'next/dynamic';
+const vConsole = dynamic(import ('util/Vconsole'),{ssr:false});
 
 export default withRedux(initStore)(
   class MyApp extends App {
@@ -13,6 +15,10 @@ export default withRedux(initStore)(
           ? await Component.getInitialProps(ctx)
           : {}
       }
+    }
+
+    componentDidMount() {
+      new vConsole();
     }
 
     render () {

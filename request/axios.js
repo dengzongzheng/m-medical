@@ -120,6 +120,7 @@ let aLoginRequest = function aLoginRequest(url, params = {}, showLoading) {
         },
         params:params
     }).then(response => {
+        console.log(response);
         let responseData = {};
         responseData["code"] = 1;
         responseData["message"] = 'success';

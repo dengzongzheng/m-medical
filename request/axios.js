@@ -115,8 +115,9 @@ let aLoginRequest = function aLoginRequest(url, params = {}, showLoading) {
     return axios.request({
         url:url,
         method:'post',
-        headers:{'Authorization': 'Basic '+config.basicAuthorization},
+        headers:{'Authorization': 'Basic Y2xpZW50XzE6MTIzNDU2'},
         validateStatus: function (status) {
+            console.log(status);
             return true;
         },
         params:params

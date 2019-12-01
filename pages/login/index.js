@@ -87,6 +87,7 @@ class Index extends Component{
                 <InputItem
                     placeholder="用户名"
                     name={"username"}
+                    type={"text"}
                     onBlur={()=>this.inputOnblur(event)}
                 />
                 <WhiteSpace/>

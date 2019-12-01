@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Toast } from 'antd-mobile';
 import 'antd-mobile/lib/toast/style/css';
 import config from 'request/config';
+import Router from "next/router";
 
 //全局设定请求类型
 axios.defaults.timeout = 10000;
@@ -14,7 +15,8 @@ axios.interceptors.response.use(function (response) {
     if (response && response.status && response.status ===401) {
         // 对返回状态码为 4xx 的请求统一处理
         // 此处统一跳转 404 页面
-        window.location.href = decodeURI(`${window.location.protocol}//${window.location.host}/login`)
+        window.location.href = decodeURI(`${window.location.protocol}//${window.location.host}/login`);
+        // Router.push({pathname:"/login"});
     }
     return response
 }, function (error) {
